@@ -1,0 +1,255 @@
+// Uniqueness constraints.
+CREATE CONSTRAINT ON (flight:Flight) ASSERT flight.FlightID IS UNIQUE;
+CREATE CONSTRAINT ON (carrier:CARRIER_NAME) ASSERT carrier.CARRIER_NAME IS UNIQUE;
+CREATE CONSTRAINT ON (airport:DEPARTING_AIRPORT) ASSERT airport.DEPARTING_AIRPORT IS UNIQUE;
+//CREATE CONSTRAINT ON (airport:LATITUDE) ASSERT airport.LATITUDE IS UNIQUE;
+//CREATE CONSTRAINT ON (airport:LONGITUDE) ASSERT airport.LONGITUDE IS UNIQUE;
+CREATE CONSTRAINT ON (airline_airport:AIRLINE_AIRPORT_FLIGHTS_MONTH) ASSERT airline_airport.AIRLINE_AIRPORT_FLIGHTS_MONTH IS UNIQUE;
+CREATE CONSTRAINT ON (age:PLANE_AGE) ASSERT age.PLANE_AGE IS UNIQUE;
+CREATE CONSTRAINT ON (previousAirport:PREVIOUS_AIRPORT) ASSERT previousAirport.PREVIOUS_AIRPORT IS UNIQUE;
+CREATE CONSTRAINT ON (distanceGrp:DISTANCE_GROUP) ASSERT distanceGrp.DISTANCE_GROUP IS UNIQUE;
+CREATE CONSTRAINT ON (departuretime:DEP_TIME_BLK) ASSERT departuretime.DEP_TIME_BLK IS UNIQUE;
+CREATE CONSTRAINT ON (delay:DEP_DEL15) ASSERT delay.DEP_DEL15 IS UNIQUE;
+CREATE CONSTRAINT ON (month:MONTH) ASSERT month.MONTH IS UNIQUE;
+CREATE CONSTRAINT ON (weekDay:DAY_OF_WEEK) ASSERT weekDay.DAY_OF_WEEK IS UNIQUE;
+CREATE CONSTRAINT ON (Precipitation:PRCP) ASSERT Precipitation.PRCP IS UNIQUE;
+CREATE CONSTRAINT ON (SnowGround:SNWD) ASSERT SnowGround.SNWD IS UNIQUE;
+CREATE CONSTRAINT ON (Snow:SNOW)ASSERT Snow.SNOW IS UNIQUE;
+CREATE CONSTRAINT ON (MaxTemp:TMAX)ASSERT MaxTemp.TMAX IS UNIQUE;
+CREATE CONSTRAINT ON (Wind:AWND)ASSERT Wind.AWND IS UNIQUE;
+//
+// Create flight node
+:auto USING PERIODIC COMMIT 500
+LOAD CSV With HEADERS FROM 'file:///Cleansed_flights.csv' AS row
+MERGE  
+  (flight:Flight {FlightID:row.Flight_ID})
+   ON CREATE SET flight.NUMBER_OF_SEATS = row.NUMBER_OF_SEATS,flight.CONCURRENT_FLIGHTS = row.CONCURRENT_FLIGHTS,flight.SEGMENT_NUMBER = row.SEGMENT_NUMBER;
+//
+// Create CARRIER Node
+:auto USING PERIODIC COMMIT 500
+LOAD CSV With HEADERS FROM 'file:///Cleansed_flights.csv' AS row
+MERGE 
+  (carrier:CARRIER{CARRIER_NAME:row.CARRIER_NAME})
+      ON CREATE SET carrier.AIRLINE_FLIGHTS_MONTH=row.AIRLINE_FLIGHTS_MONTH,carrier.AVG_MONTHLY_PASS_AIRLINE=row.AVG_MONTHLY_PASS_AIRLINE,carrier.GROUND_SERV_PER_PASS=row.GROUND_SERV_PER_PASS, carrier.FLT_ATTENDANTS_PER_PASS = carrier.FLT_ATTENDANTS_PER_PASS;
+//  
+// Load AIRPORT node
+:auto USING PERIODIC COMMIT 500
+LOAD CSV With HEADERS FROM 'file:///Cleansed_flights.csv' AS row
+MERGE  
+  (airport:AIRPORT {DEPARTING_AIRPORT: row.DEPARTING_AIRPORT})
+    ON CREATE SET airport.LATITUDE=row.LATITUDE,airport.LONGITUDE=row.LONGITUDE,airport.AVG_MONTHLY_PASS_AIRPORT=row.AVG_MONTHLY_PASS_AIRPORT,airport.AIRPORT_FLIGHTS_MONTH=row.AIRPORT_FLIGHTS_MONTH;
+//
+// Create airline_airports__monthly flights Node
+:auto USING PERIODIC COMMIT 500
+LOAD CSV With HEADERS FROM 'file:///Cleansed_flights.csv' AS row
+MERGE 
+  (monthlyflights:airline_airport_flights{AIRLINE_AIRPORT_FLIGHTS_MONTH:row.AIRLINE_AIRPORT_FLIGHTS_MONTH});
+//
+// Create departure time Node
+:auto USING PERIODIC COMMIT 500
+LOAD CSV With HEADERS FROM 'file:///Cleansed_flights.csv' AS row
+MERGE 
+  (departuretime:DEP_TIME_BLK{DEP_TIME_BLK:row.DEP_TIME_BLK});
+//
+// Create dayweek Node
+:auto USING PERIODIC COMMIT 500
+LOAD CSV With HEADERS FROM 'file:///Cleansed_flights.csv' AS row
+MERGE 
+  (weekDay:DAY_OF_WEEK{DAY_OF_WEEK:row.DAY_OF_WEEK});
+//
+// Create age:PLANE_AGE Node
+:auto USING PERIODIC COMMIT 500
+LOAD CSV With HEADERS FROM 'file:///Cleansed_flights.csv' AS row
+MERGE 
+  (age:PLANE_AGE{PLANE_AGE:row.PLANE_AGE});
+//
+// Create delay Node
+:auto USING PERIODIC COMMIT 500
+LOAD CSV With HEADERS FROM 'file:///Cleansed_flights.csv' AS row
+MERGE 
+  (delay:DEP_DEL15{DEP_DEL15:row.DEP_DEL15});
+//	  
+//create previousAirport node
+:auto USING PERIODIC COMMIT 500
+LOAD CSV With HEADERS FROM 'file:///Cleansed_flights.csv' AS row
+MERGE 
+  (previousAirport:PREVIOUS_AIRPORT{PREVIOUS_AIRPORT:row.PREVIOUS_AIRPORT});
+//
+//create distance group distanceGrp:DISTANCE_GROUP
+:auto USING PERIODIC COMMIT 500
+LOAD CSV With HEADERS FROM 'file:///Cleansed_flights.csv' AS row
+MERGE 
+  (distanceGrp:DISTANCE_GROUP{DISTANCE_GROUP:row.DISTANCE_GROUP});
+//
+//create MONTH
+:auto USING PERIODIC COMMIT 500
+LOAD CSV With HEADERS FROM 'file:///Cleansed_flights.csv' AS row
+MERGE 
+  (month:MONTH{MONTH:row.MONTH});
+//
+//create Precipitation:PRCP
+:auto USING PERIODIC COMMIT 500
+LOAD CSV With HEADERS FROM 'file:///Cleansed_flights.csv' AS row
+MERGE 
+  (Precipitation:PRCP{PRCP:row.PRCP});
+//
+//create Snow
+:auto USING PERIODIC COMMIT 500
+LOAD CSV With HEADERS FROM 'file:///Cleansed_flights.csv' AS row
+MERGE 
+  (Snow:SNOW{Snow:row.SNOW});
+//
+//create MaxTemp
+:auto USING PERIODIC COMMIT 500
+LOAD CSV With HEADERS FROM 'file:///Cleansed_flights.csv' AS row
+MERGE 
+  (MaxTemp:TMAX{TMAX:row.TMAX});
+//
+//create Wind
+:auto USING PERIODIC COMMIT 500
+LOAD CSV With HEADERS FROM 'file:///Cleansed_flights.csv' AS row
+MERGE 
+  (Wind:AWND{Wind:row.AWND});
+//
+//create snowground
+:auto USING PERIODIC COMMIT 500
+LOAD CSV With HEADERS FROM 'file:///Cleansed_flights.csv' AS row
+MERGE 
+  (SnowGround:SNWD{SNWD:row.SNWD});
+//
+// Create Constrains  build reltionship
+//flight and carrier
+:auto USING PERIODIC COMMIT 500
+LOAD CSV With HEADERS FROM 'file:///Cleansed_flights.csv' AS row
+     MATCH (flight:Flight {FlightID:row.Flight_ID})
+     MATCH (carrier:CARRIER {CARRIER_NAME:row.CARRIER_NAME})
+     MERGE (flight)-[:BELONG_TO]->(carrier)
+	 ;
+//
+// flight and airport
+:auto USING PERIODIC COMMIT 500
+LOAD CSV With HEADERS FROM 'file:///Cleansed_flights.csv' AS row
+     MATCH (flight:Flight {FlightID:row.Flight_ID})
+     MATCH (airport:AIRPORT {DEPARTING_AIRPORT: row.DEPARTING_AIRPORT})
+     MERGE (flight)-[:Departed_from]->(airport)
+	 ;
+//
+// Airline airport monthly flights relationships
+:auto USING PERIODIC COMMIT 500
+LOAD CSV With HEADERS FROM 'file:///Cleansed_flights.csv' AS row
+     MATCH (flight:Flight {FlightID:row.Flight_ID})
+     MATCH (monthlyflights:airline_airport_flights{AIRLINE_AIRPORT_FLIGHTS_MONTH:row.AIRLINE_AIRPORT_FLIGHTS_MONTH})
+     MERGE (flight)-[:HAS]->(monthlyflights)
+	 ;
+//
+// Create Constrains  build reltionship
+//carrier and monthly flights
+:auto USING PERIODIC COMMIT 500
+LOAD CSV With HEADERS FROM 'file:///Cleansed_flights.csv' AS row
+     MATCH (monthlyflights:airline_airport_flights{AIRLINE_AIRPORT_FLIGHTS_MONTH:row.AIRLINE_AIRPORT_FLIGHTS_MONTH})
+     MATCH (carrier:CARRIER {CARRIER_NAME:row.CARRIER_NAME})
+     MERGE (carrier)-[:HAS]->(monthlyflights)
+	 ;
+//
+:auto USING PERIODIC COMMIT 500
+LOAD CSV With HEADERS FROM 'file:///Cleansed_flights.csv' AS row
+     MATCH (airport:AIRPORT {DEPARTING_AIRPORT: row.DEPARTING_AIRPORT})
+     MATCH (monthlyflights:airline_airport_flights{AIRLINE_AIRPORT_FLIGHTS_MONTH:row.AIRLINE_AIRPORT_FLIGHTS_MONTH})
+     MERGE (airport)-[:HAS]->(monthlyflights)
+	 ;
+//
+// with month
+:auto USING PERIODIC COMMIT 500
+LOAD CSV With HEADERS FROM 'file:///Cleansed_flights.csv' AS row
+     MATCH (month:MONTH{MONTH:row.MONTH})
+     MATCH (monthlyflights:airline_airport_flights{AIRLINE_AIRPORT_FLIGHTS_MONTH:row.AIRLINE_AIRPORT_FLIGHTS_MONTH})
+     MERGE (monthlyflights)-[:FOR]->(month)
+	 ;
+//
+// Flight with month
+:auto USING PERIODIC COMMIT 500
+LOAD CSV With HEADERS FROM 'file:///Cleansed_flights.csv' AS row
+     MATCH (month:MONTH{MONTH:row.MONTH})
+     MATCH (flight:Flight {FlightID:row.Flight_ID})
+     MERGE (flight)-[:FOR]->(month)
+	 ;
+//FLIGHT AND Departure time
+:auto USING PERIODIC COMMIT 500
+LOAD CSV With HEADERS FROM 'file:///Cleansed_flights.csv' AS row
+     MATCH (flight:Flight {FlightID:row.Flight_ID})
+     MATCH (departuretime:DEP_TIME_BLK{DEP_TIME_BLK:row.DEP_TIME_BLK})
+     MERGE (flight)-[:WITH]->(departuretime)
+	 ;
+//FLIGHT AND Delay
+:auto USING PERIODIC COMMIT 500
+LOAD CSV With HEADERS FROM 'file:///Cleansed_flights.csv' AS row
+     MATCH (flight:Flight {FlightID:row.Flight_ID})
+     MATCH (delay:DEP_DEL15{DEP_DEL15:row.DEP_DEL15})
+     MERGE (flight)-[:WITH]->(delay)
+	 ;
+//FLIGHT AND DayofWeek
+:auto USING PERIODIC COMMIT 500
+LOAD CSV With HEADERS FROM 'file:///Cleansed_flights.csv' AS row
+     MATCH (flight:Flight {FlightID:row.Flight_ID})
+     MATCH (weekDay:DAY_OF_WEEK{DAY_OF_WEEK:row.DAY_OF_WEEK})
+     MERGE (flight)-[:FOR]->(weekDay)
+	 ;
+//FLIGHT AND Distance Group
+:auto USING PERIODIC COMMIT 500
+LOAD CSV With HEADERS FROM 'file:///Cleansed_flights.csv' AS row
+     MATCH (flight:Flight {FlightID:row.Flight_ID})
+     MATCH (distanceGrp:DISTANCE_GROUP{DISTANCE_GROUP:row.DISTANCE_GROUP})
+     MERGE (flight)-[:WITH]->(distanceGrp)
+	 ;
+//FLIGHT AND Age
+:auto USING PERIODIC COMMIT 500
+LOAD CSV With HEADERS FROM 'file:///Cleansed_flights.csv' AS row
+     MATCH (flight:Flight {FlightID:row.Flight_ID})
+     MATCH (age:PLANE_AGE{PLANE_AGE:row.PLANE_AGE})
+     MERGE (flight)-[:WITH]->(age)
+	 ;
+//FLIGHT AND Previous Airport
+:auto USING PERIODIC COMMIT 500
+LOAD CSV With HEADERS FROM 'file:///Cleansed_flights.csv' AS row
+     MATCH (flight:Flight {FlightID:row.Flight_ID})
+     MATCH (previousAirport:PREVIOUS_AIRPORT{PREVIOUS_AIRPORT:row.PREVIOUS_AIRPORT})
+     MERGE (flight)-[:WITH]->(previousAirport)
+	 ;
+	 
+//flight conditions
+//FLIGHT AND TMAX
+:auto USING PERIODIC COMMIT 500
+LOAD CSV With HEADERS FROM 'file:///Cleansed_flights.csv' AS row
+     MATCH (flight:Flight {FlightID:row.Flight_ID})
+     MATCH (MaxTemp:TMAX{TMAX:row.TMAX})
+     MERGE (flight)-[:WITH]->(MaxTemp)
+	 ;
+//FLIGHT AND PRCP
+:auto USING PERIODIC COMMIT 500
+LOAD CSV With HEADERS FROM 'file:///Cleansed_flights.csv' AS row
+     MATCH (flight:Flight {FlightID:row.Flight_ID})
+     MATCH (Precipitation:PRCP{PRCP:row.PRCP})
+     MERGE (flight)-[:WITH]->(Precipitation)
+	 ;
+	 
+//FLIGHT AND SNOW
+:auto USING PERIODIC COMMIT 500
+LOAD CSV With HEADERS FROM 'file:///Cleansed_flights.csv' AS row
+     MATCH (flight:Flight {FlightID:row.Flight_ID})
+     MATCH (Snow:SNOW{Snow:row.SNOW})
+     MERGE (flight)-[:WITH]->(Snow)
+	 ;
+//FLIGHT AND SNWD
+:auto USING PERIODIC COMMIT 500
+LOAD CSV With HEADERS FROM 'file:///Cleansed_flights.csv' AS row
+     MATCH (flight:Flight {FlightID:row.Flight_ID})
+     MATCH (SnowGround:SNWD{SNWD:row.SNWD})
+     MERGE (flight)-[:WITH]->(SnowGround)
+	 ;
+//FLIGHT AND AWND
+:auto USING PERIODIC COMMIT 500
+LOAD CSV With HEADERS FROM 'file:///Cleansed_flights.csv' AS row
+     MATCH (flight:Flight {FlightID:row.Flight_ID})
+     MATCH (Wind:AWND{Wind:row.AWND})
+     MERGE (flight)-[:WITH]->(Wind)
+	 ;

@@ -1,0 +1,366 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2022.1">
+  <Nodes>
+    <Node ToolID="1">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="54" y="102" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File RecordLimit="" SearchSubDirs="False" FileFormat="0" OutputFileName="">C:\Users\srees\Documents\NEU\Big Data\group proj\new_flight_cleansed\new_flight_cleansed.csv</File>
+          <FormatSpecificOptions>
+            <HeaderRow>True</HeaderRow>
+            <IgnoreErrors>False</IgnoreErrors>
+            <AllowShareWrite>False</AllowShareWrite>
+            <ImportLine>1</ImportLine>
+            <FieldLen>254</FieldLen>
+            <SingleThreadRead>False</SingleThreadRead>
+            <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
+            <Delimeter>,</Delimeter>
+            <QuoteRecordBreak>False</QuoteRecordBreak>
+            <CodePage>28591</CodePage>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>new_flight_cleansed.csv</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Field_1" size="254" source="File: C:\Users\srees\Documents\NEU\Big Data\group proj\new_flight_cleansed\new_flight_cleansed.csv" type="V_String" />
+            <Field name="MONTH" size="254" source="File: C:\Users\srees\Documents\NEU\Big Data\group proj\new_flight_cleansed\new_flight_cleansed.csv" type="V_String" />
+            <Field name="DAY_OF_WEEK" size="254" source="File: C:\Users\srees\Documents\NEU\Big Data\group proj\new_flight_cleansed\new_flight_cleansed.csv" type="V_String" />
+            <Field name="DEP_DEL15" size="254" source="File: C:\Users\srees\Documents\NEU\Big Data\group proj\new_flight_cleansed\new_flight_cleansed.csv" type="V_String" />
+            <Field name="DEP_TIME_BLK" size="254" source="File: C:\Users\srees\Documents\NEU\Big Data\group proj\new_flight_cleansed\new_flight_cleansed.csv" type="V_String" />
+            <Field name="DISTANCE_GROUP" size="254" source="File: C:\Users\srees\Documents\NEU\Big Data\group proj\new_flight_cleansed\new_flight_cleansed.csv" type="V_String" />
+            <Field name="SEGMENT_NUMBER" size="254" source="File: C:\Users\srees\Documents\NEU\Big Data\group proj\new_flight_cleansed\new_flight_cleansed.csv" type="V_String" />
+            <Field name="CONCURRENT_FLIGHTS" size="254" source="File: C:\Users\srees\Documents\NEU\Big Data\group proj\new_flight_cleansed\new_flight_cleansed.csv" type="V_String" />
+            <Field name="NUMBER_OF_SEATS" size="254" source="File: C:\Users\srees\Documents\NEU\Big Data\group proj\new_flight_cleansed\new_flight_cleansed.csv" type="V_String" />
+            <Field name="CARRIER_NAME" size="254" source="File: C:\Users\srees\Documents\NEU\Big Data\group proj\new_flight_cleansed\new_flight_cleansed.csv" type="V_String" />
+            <Field name="AIRPORT_FLIGHTS_MONTH" size="254" source="File: C:\Users\srees\Documents\NEU\Big Data\group proj\new_flight_cleansed\new_flight_cleansed.csv" type="V_String" />
+            <Field name="AIRLINE_FLIGHTS_MONTH" size="254" source="File: C:\Users\srees\Documents\NEU\Big Data\group proj\new_flight_cleansed\new_flight_cleansed.csv" type="V_String" />
+            <Field name="AIRLINE_AIRPORT_FLIGHTS_MONTH" size="254" source="File: C:\Users\srees\Documents\NEU\Big Data\group proj\new_flight_cleansed\new_flight_cleansed.csv" type="V_String" />
+            <Field name="AVG_MONTHLY_PASS_AIRPORT" size="254" source="File: C:\Users\srees\Documents\NEU\Big Data\group proj\new_flight_cleansed\new_flight_cleansed.csv" type="V_String" />
+            <Field name="AVG_MONTHLY_PASS_AIRLINE" size="254" source="File: C:\Users\srees\Documents\NEU\Big Data\group proj\new_flight_cleansed\new_flight_cleansed.csv" type="V_String" />
+            <Field name="FLT_ATTENDANTS_PER_PASS" size="254" source="File: C:\Users\srees\Documents\NEU\Big Data\group proj\new_flight_cleansed\new_flight_cleansed.csv" type="V_String" />
+            <Field name="GROUND_SERV_PER_PASS" size="254" source="File: C:\Users\srees\Documents\NEU\Big Data\group proj\new_flight_cleansed\new_flight_cleansed.csv" type="V_String" />
+            <Field name="PLANE_AGE" size="254" source="File: C:\Users\srees\Documents\NEU\Big Data\group proj\new_flight_cleansed\new_flight_cleansed.csv" type="V_String" />
+            <Field name="DEPARTING_AIRPORT" size="254" source="File: C:\Users\srees\Documents\NEU\Big Data\group proj\new_flight_cleansed\new_flight_cleansed.csv" type="V_String" />
+            <Field name="LATITUDE" size="254" source="File: C:\Users\srees\Documents\NEU\Big Data\group proj\new_flight_cleansed\new_flight_cleansed.csv" type="V_String" />
+            <Field name="LONGITUDE" size="254" source="File: C:\Users\srees\Documents\NEU\Big Data\group proj\new_flight_cleansed\new_flight_cleansed.csv" type="V_String" />
+            <Field name="PREVIOUS_AIRPORT" size="254" source="File: C:\Users\srees\Documents\NEU\Big Data\group proj\new_flight_cleansed\new_flight_cleansed.csv" type="V_String" />
+            <Field name="PRCP" size="254" source="File: C:\Users\srees\Documents\NEU\Big Data\group proj\new_flight_cleansed\new_flight_cleansed.csv" type="V_String" />
+            <Field name="SNOW" size="254" source="File: C:\Users\srees\Documents\NEU\Big Data\group proj\new_flight_cleansed\new_flight_cleansed.csv" type="V_String" />
+            <Field name="SNWD" size="254" source="File: C:\Users\srees\Documents\NEU\Big Data\group proj\new_flight_cleansed\new_flight_cleansed.csv" type="V_String" />
+            <Field name="TMAX" size="254" source="File: C:\Users\srees\Documents\NEU\Big Data\group proj\new_flight_cleansed\new_flight_cleansed.csv" type="V_String" />
+            <Field name="AWND" size="254" source="File: C:\Users\srees\Documents\NEU\Big Data\group proj\new_flight_cleansed\new_flight_cleansed.csv" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="2">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="174" y="102" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="MONTH" selected="True" />
+            <SelectField field="DAY_OF_WEEK" selected="True" />
+            <SelectField field="DEP_DEL15" selected="True" />
+            <SelectField field="DEP_TIME_BLK" selected="True" />
+            <SelectField field="DISTANCE_GROUP" selected="True" />
+            <SelectField field="SEGMENT_NUMBER" selected="True" />
+            <SelectField field="CONCURRENT_FLIGHTS" selected="True" />
+            <SelectField field="NUMBER_OF_SEATS" selected="True" />
+            <SelectField field="CARRIER_NAME" selected="True" />
+            <SelectField field="AIRPORT_FLIGHTS_MONTH" selected="True" />
+            <SelectField field="AIRLINE_FLIGHTS_MONTH" selected="True" />
+            <SelectField field="AIRLINE_AIRPORT_FLIGHTS_MONTH" selected="True" />
+            <SelectField field="AVG_MONTHLY_PASS_AIRPORT" selected="True" />
+            <SelectField field="AVG_MONTHLY_PASS_AIRLINE" selected="True" />
+            <SelectField field="FLT_ATTENDANTS_PER_PASS" selected="True" />
+            <SelectField field="GROUND_SERV_PER_PASS" selected="True" />
+            <SelectField field="PLANE_AGE" selected="True" />
+            <SelectField field="DEPARTING_AIRPORT" selected="True" />
+            <SelectField field="LATITUDE" selected="True" />
+            <SelectField field="LONGITUDE" selected="True" />
+            <SelectField field="PREVIOUS_AIRPORT" selected="True" />
+            <SelectField field="PRCP" selected="True" />
+            <SelectField field="SNOW" selected="True" />
+            <SelectField field="SNWD" selected="True" />
+            <SelectField field="TMAX" selected="True" />
+            <SelectField field="AWND" selected="True" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="3">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.RecordID.RecordID">
+        <Position x="366" y="90" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FieldName>Flight_ID</FieldName>
+          <StartValue>1</StartValue>
+          <FieldType>Int32</FieldType>
+          <FieldSize>6</FieldSize>
+          <Position>0</Position>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxRecordID" />
+    </Node>
+    <Node ToolID="4">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="462" y="90" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="True" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="AIRPORT_FLIGHTS_MONTH" selected="False" />
+            <SelectField field="AIRLINE_FLIGHTS_MONTH" selected="False" />
+            <SelectField field="MONTH" selected="True" />
+            <SelectField field="GROUND_SERV_PER_PASS" selected="False" />
+            <SelectField field="AVG_MONTHLY_PASS_AIRLINE" selected="False" />
+            <SelectField field="TMAX" selected="True" />
+            <SelectField field="SNWD" selected="True" />
+            <SelectField field="SNOW" selected="True" />
+            <SelectField field="PRCP" selected="True" />
+            <SelectField field="PREVIOUS_AIRPORT" selected="False" />
+            <SelectField field="LONGITUDE" selected="False" />
+            <SelectField field="LATITUDE" selected="False" />
+            <SelectField field="DEPARTING_AIRPORT" selected="True" />
+            <SelectField field="PLANE_AGE" selected="True" />
+            <SelectField field="DAY_OF_WEEK" selected="True" />
+            <SelectField field="Flight_ID" selected="True" />
+            <SelectField field="AWND" selected="True" />
+            <SelectField field="AIRLINE_AIRPORT_FLIGHTS_MONTH" selected="False" />
+            <SelectField field="CARRIER_NAME" selected="True" />
+            <SelectField field="NUMBER_OF_SEATS" selected="False" />
+            <SelectField field="CONCURRENT_FLIGHTS" selected="False" />
+            <SelectField field="SEGMENT_NUMBER" selected="False" />
+            <SelectField field="DISTANCE_GROUP" selected="False" />
+            <SelectField field="DEP_TIME_BLK" selected="True" />
+            <SelectField field="DEP_DEL15" selected="True" />
+            <SelectField field="FLT_ATTENDANTS_PER_PASS" selected="False" />
+            <SelectField field="AVG_MONTHLY_PASS_AIRPORT" selected="False" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="7">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Unique.Unique">
+        <Position x="270" y="102" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UniqueFields>
+            <Field field="MONTH" />
+            <Field field="DAY_OF_WEEK" />
+            <Field field="DEP_DEL15" />
+            <Field field="DEP_TIME_BLK" />
+            <Field field="DISTANCE_GROUP" />
+            <Field field="SEGMENT_NUMBER" />
+            <Field field="CONCURRENT_FLIGHTS" />
+            <Field field="NUMBER_OF_SEATS" />
+            <Field field="CARRIER_NAME" />
+            <Field field="AIRPORT_FLIGHTS_MONTH" />
+            <Field field="AIRLINE_FLIGHTS_MONTH" />
+            <Field field="AIRLINE_AIRPORT_FLIGHTS_MONTH" />
+            <Field field="AVG_MONTHLY_PASS_AIRPORT" />
+            <Field field="AVG_MONTHLY_PASS_AIRLINE" />
+            <Field field="FLT_ATTENDANTS_PER_PASS" />
+            <Field field="GROUND_SERV_PER_PASS" />
+            <Field field="PLANE_AGE" />
+            <Field field="DEPARTING_AIRPORT" />
+            <Field field="LATITUDE" />
+            <Field field="LONGITUDE" />
+            <Field field="PREVIOUS_AIRPORT" />
+            <Field field="PRCP" />
+            <Field field="SNOW" />
+            <Field field="SNWD" />
+            <Field field="TMAX" />
+            <Field field="AWND" />
+          </UniqueFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnique" />
+    </Node>
+    <Node ToolID="10">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="678" y="162" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\Users\srees\AppData\Local\Temp\Engine_19268_9492146a57eca649bba8a05c144fb8f5_\Engine_19268_2c4df0a9d8ccd540a0504ef89c3acf09~.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Profile</DefaultTab>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="11">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="689" y="5" width="155" height="165" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Container 11</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="True" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="5">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+            <Position x="714" y="54" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <File MaxRecords="" FileFormat="0">C:\Users\srees\Documents\NEU\Big Data\group proj\FlightDelays\Cleansed_flights.csv</File>
+              <Passwords />
+              <FormatSpecificOptions>
+                <LineEndStyle>CRLF</LineEndStyle>
+                <Delimeter>,</Delimeter>
+                <ForceQuotes>False</ForceQuotes>
+                <HeaderRow>True</HeaderRow>
+                <CodePage>28591</CodePage>
+                <WriteBOM>True</WriteBOM>
+              </FormatSpecificOptions>
+              <MultiFile value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Cleansed_flights.csv</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+        </Node>
+      </ChildNodes>
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="2" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="7" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="Output" />
+      <Destination ToolID="4" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="5" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="10" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="7" Connection="Unique" />
+      <Destination ToolID="3" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <RunWithE2 value="True" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>DataPrep</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="51bf9b02-70c4-421b-8197-ec3e40081441" />
+      <Telemetry>
+        <PreviousWorkflowId value="9f98c0c4-a220-43c1-bbdb-fe1dd5b61916" />
+        <OriginWorkflowId value="9f98c0c4-a220-43c1-bbdb-fe1dd5b61916" />
+      </Telemetry>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>
